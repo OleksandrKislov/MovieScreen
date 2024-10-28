@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Movie Screen</string>
+
+    <string name="info">Інфо</string>
+
+    <string name="date_picker">Вибір дати</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Скасувати</string>
+
+    <string name="network_problem_title">Проблема з мережею</string>
+    <string name="network_problem_text">Будь ласка, перевірте підключення до Інтернету та спробуйте ще раз</string>
+
+    <string name="oops">Ой!</string>
+    <string name="something_went_wrong">Щось пішло не так</string>
+
+    <string name="failed_to_open_web_page_title">Не вдалося відкрити веб-сторінку</string>
+    <string name="failed_to_open_web_page_text">Під час завантаження веб-сторінки сталася помилка з наступних причин:\n%1$s</string>
+
+    <string name="retry">Спробувати ще</string>
+
+    <string name="show_will_start_soon">Скоро початок сеансу\nКвиток можна придбати в касі кінотеатру</string>
+
+    <string name="no_movies_for_this_date">Немає фільмів на цю дату</string>
+
+</resources>
