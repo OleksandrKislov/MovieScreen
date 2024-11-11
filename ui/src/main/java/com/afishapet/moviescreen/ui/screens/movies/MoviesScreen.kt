@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
@@ -30,8 +31,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.afishapet.moviescreen.ui.R
 import com.afishapet.moviescreen.domain.models.Answer
+import com.afishapet.moviescreen.ui.R
 import com.afishapet.moviescreen.ui.components.AppCircularProgressIndicator
 import com.afishapet.moviescreen.ui.components.AppDatePicker
 import com.afishapet.moviescreen.ui.components.BaseErrorHandler
@@ -56,6 +57,8 @@ fun SharedTransitionScope.MoviesScreen(
             }
         }
     }
+
+    val moviesLazyGridState = rememberLazyGridState()
 
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -82,6 +85,7 @@ fun SharedTransitionScope.MoviesScreen(
             is Answer.Success -> {
                 LazyVerticalGrid(
                     modifier = Modifier.fillMaxSize(),
+                    state = moviesLazyGridState,
                     columns = GridCells.Fixed(2),
                     verticalArrangement = Arrangement.spacedBy(5.dp),
                     horizontalArrangement = Arrangement.spacedBy(5.dp),

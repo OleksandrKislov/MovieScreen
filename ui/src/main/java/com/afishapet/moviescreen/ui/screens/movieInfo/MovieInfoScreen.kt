@@ -7,6 +7,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
@@ -51,6 +52,8 @@ fun SharedTransitionScope.MovieInfoScreen(
             actions.value = {}
         }
     }
+
+    val scheduleLazyListState = rememberLazyListState()
 
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -124,6 +127,7 @@ fun SharedTransitionScope.MovieInfoScreen(
                                     bottomStart = CornerSize(0.dp)
                                 )
                             ),
+                        state = scheduleLazyListState,
                         verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Top),
                         contentPadding = PaddingValues(top = 5.dp, bottom = 5.dp)
                     ) {

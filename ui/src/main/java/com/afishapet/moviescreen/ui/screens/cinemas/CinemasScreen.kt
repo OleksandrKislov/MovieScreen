@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.CardDefaults
@@ -50,6 +51,8 @@ fun CinemasScreen(
         }
     }
 
+    val moviesLazyListState = rememberLazyListState()
+
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -59,6 +62,7 @@ fun CinemasScreen(
 
             is Answer.Success -> LazyColumn(
                 modifier = Modifier.fillMaxSize(),
+                state = moviesLazyListState,
                 contentPadding = PaddingValues(5.dp),
                 verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterVertically)
             ) {
